@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .hero {
+            background-image: url('/img/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+        }
+        .menu {
+            margin-top: 20px;
+        }
+        .menu a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Welcome to Our Application</h1>
+    <p>Explore, learn, and get started with our amazing features!</p>
+</div>
+
+<!-- Menu Section -->
+<div class="menu">
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/login}">Login</a>
+    <a th:href="@{/profile}">Profile</a>
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+<h1>Profile Page</h1>
+<p>Welcome, <span th:text="${username}">User</span>!</p>
+
+<p>This is your protected profile page.</p>
+<p><a th:href="@{/logout}">Logout</a></p>
+
+</body>
+</html>
